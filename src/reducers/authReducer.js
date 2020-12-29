@@ -7,12 +7,14 @@ export default (state = INITIAL_STATE, action) => {
         case SIGN_IN:
             return {
                 ...state,
-                isSignedIn: true
+                isSignedIn: true,
+                userId: action.payload
             }
         case SIGN_OUT:
             return {
                 ...state,
-                isSignedOut: false
+                isSignedIn: false,
+                userId: null
             }
         default :
             return state;
